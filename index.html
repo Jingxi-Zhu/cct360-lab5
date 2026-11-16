@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanghai — A City in Motion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="experience">
+
+        <div class="scene-container">
+            <div class="scene active" id="morning">
+                <img src="images/morning.jpg" alt="Cyclists on a tree-lined street in Shanghai">
+            </div>
+
+            <div class="scene" id="afternoon">
+                <img src="images/afternoon.jpg" alt="A busy Shanghai street filled with pedestrians and traffic">
+            </div>
+
+            <div class="scene" id="evening">
+                <img src="images/evening.jpg" alt="Shanghai skyline beside the Huangpu River at dusk">
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+
+        <header class="site-header">
+            <div class="logo">SHANGHAI <span>上海</span></div>
+            <div class="header-detail">A SOUND & VISUAL EXPERIENCE</div>
+        </header>
+
+        <section class="content">
+            <div class="scene-info">
+                <p class="scene-number" id="sceneNumber">01 / 03</p>
+                <p class="scene-label" id="sceneLabel">MORNING IN SHANGHAI</p>
+
+                <h1 id="sceneTitle">The City Awakens</h1>
+
+                <p class="scene-description" id="sceneDescription">
+                    Bicycle bells ring beneath the plane trees.
+                    Birds sing as the city slowly begins its day.
+                </p>
+            </div>
+
+            <div class="sound-indicator" id="soundIndicator">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <nav class="scene-navigation" aria-label="Choose a scene">
+            <button class="scene-button active" data-scene="morning" data-time="0">
+                <span class="nav-number">01</span>
+                <span class="nav-name">Morning</span>
+            </button>
+
+            <button class="scene-button" data-scene="afternoon" data-time="25">
+                <span class="nav-number">02</span>
+                <span class="nav-name">Afternoon</span>
+            </button>
+
+            <button class="scene-button" data-scene="evening" data-time="55">
+                <span class="nav-number">03</span>
+                <span class="nav-name">Evening</span>
+            </button>
+        </nav>
+
+        <footer class="audio-panel">
+            <div class="audio-heading">
+                <span class="audio-label">NOW PLAYING</span>
+                <span class="audio-name">Shanghai — A City in Motion</span>
+            </div>
+
+            <div class="audio-controls">
+                <button id="restartButton" class="control-button" aria-label="Restart audio">
+                    &#8634;
+                </button>
+
+                <button id="playButton" class="play-button" aria-label="Play audio">
+                    <span id="playIcon">&#9654;</span>
+                </button>
+
+                <div class="timeline">
+                    <span id="currentTime">0:00</span>
+
+                    <input
+                        type="range"
+                        id="progressBar"
+                        min="0"
+                        max="85"
+                        value="0"
+                        step="0.1"
+                        aria-label="Audio playback position"
+                    >
+
+                    <span id="duration">1:25</span>
+                </div>
+
+                <div class="volume-control">
+                    <label for="volumeSlider">VOL</label>
+                    <input
+                        type="range"
+                        id="volumeSlider"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.8"
+                        aria-label="Volume"
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <audio id="cityAudio" preload="metadata">
+            <source src="audio/Shanghai_Soundscape_V7.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+        </audio>
+
+    </main>
+</body>
+</html>
